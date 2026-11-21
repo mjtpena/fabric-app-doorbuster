@@ -1,0 +1,276 @@
+@import 'tailwindcss';
+@import '@x10/shared/styles.css';
+@source "../../../shared/src";
+
+/* ------------------------------------------------------------------ the midnight arcade (light theme: dusk) */
+
+:root {
+  --db-sky-top: #dcd3ee;
+  --db-sky-mid: #eadcea;
+  --db-sky-low: #f7e2d6;
+  --db-fan: rgb(255 255 255 / 0.32);
+  --db-fan-line: rgb(84 70 120 / 0.28);
+  --db-iron: #6f6787;
+  --db-iron-2: #8a83a0;
+  --db-facade: #d6cfe0;
+  --db-facade-2: #c8c0d6;
+  --db-facade-line: rgb(60 50 90 / 0.12);
+  --db-fascia: #3b3550;
+  --db-fascia-2: #2f2a42;
+  --db-frame: #4a4460;
+  --db-glass-dark: #5d577a;
+  --db-glass-deep: #2c2840;
+  --db-sill: #3b3550;
+  --db-sill-ink: #f1edf8;
+  --db-sill-muted: #bdb5d3;
+  --db-floor: #c9c1d6;
+  --db-floor-2: #b9b0c9;
+  --db-street: #b3aac4;
+  --db-street-2: #9f96b3;
+  --db-rail: #4a4460;
+  --db-shopper: #3a3450;
+  --db-shopper-2: #4c4566;
+  --db-paper: #c9ae82;
+  --db-paper-2: #b8986a;
+  --db-paper-ink: #4a3a22;
+  --db-tape: rgb(255 250 235 / 0.7);
+  --db-shutter: #8c86a0;
+  --db-shutter-2: #7a7490;
+  --db-shutter-line: rgb(40 35 60 / 0.25);
+  --db-whitewash: rgb(245 242 250 / 0.82);
+  --db-rope: #a3143c;
+  --db-brass: #b88d2e;
+  --db-clock: rgb(36 31 54 / 0.86);
+  --db-clock-line: rgb(255 255 255 / 0.14);
+  --db-clock-ink: #efeaf9;
+  --db-clock-muted: #a59cc0;
+  --db-snow: rgb(255 255 255 / 0.85);
+  --db-ink: #1d1a29;
+  --db-ink-muted: #5e5873;
+
+  --db-neon-volt: #9a4dff;
+  --db-neon-hot: #f0388f;
+  --db-neon-ok: #23c486;
+  --db-neon-warn: #f29a12;
+  --db-neon-bad: #ff4d63;
+  --db-neon-info: #2aa7f0;
+  --db-neon-idle: #8e89a3;
+  --db-neon-white: #fff4fb;
+
+  --db-cat-electronics: #2aa7f0;
+  --db-cat-home: #ff8a3d;
+  --db-cat-fashion: #f0388f;
+  --db-cat-toys: #23c486;
+  --db-cat-beauty: #b77cff;
+  --db-cat-grocery: #a9d62a;
+
+  --db-glow: 0.55;
+  --db-pool: 0.28;
+  --db-reflect: 0.3;
+  --db-focus: rgb(255 255 255 / 0.5);
+}
+
+/* Night. Set for the system dark theme (unless light is forced) and for a forced dark theme. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --db-sky-top: #06050c;
+    --db-sky-mid: #0f0a1f;
+    --db-sky-low: #241038;
+    --db-fan: rgb(150 120 255 / 0.05);
+    --db-fan-line: rgb(190 170 255 / 0.12);
+    --db-iron: #2b2740;
+    --db-iron-2: #3a3554;
+    --db-facade: #15131f;
+    --db-facade-2: #1b1828;
+    --db-facade-line: rgb(255 255 255 / 0.04);
+    --db-fascia: #0d0c15;
+    --db-fascia-2: #0a0910;
+    --db-frame: #27233a;
+    --db-glass-dark: #0c0b14;
+    --db-glass-deep: #07060c;
+    --db-sill: #100e19;
+    --db-sill-ink: #e9e4f6;
+    --db-sill-muted: #8b84a3;
+    --db-floor: #12101b;
+    --db-floor-2: #0e0c16;
+    --db-street: #0c0b13;
+    --db-street-2: #08070e;
+    --db-rail: #2b2740;
+    --db-shopper: #04030a;
+    --db-shopper-2: #0b0914;
+    --db-paper: #6f5a3d;
+    --db-paper-2: #5e4b31;
+    --db-paper-ink: #f2e6cf;
+    --db-tape: rgb(240 230 210 / 0.35);
+    --db-shutter: #34313f;
+    --db-shutter-2: #2a2834;
+    --db-shutter-line: rgb(0 0 0 / 0.45);
+    --db-whitewash: rgb(220 215 230 / 0.32);
+    --db-rope: #c21b4c;
+    --db-brass: #d8b257;
+    --db-clock: rgb(14 12 24 / 0.82);
+    --db-clock-line: rgb(255 255 255 / 0.1);
+    --db-clock-ink: #ece8f6;
+    --db-clock-muted: #8f8aa3;
+    --db-snow: rgb(235 230 255 / 0.7);
+    --db-ink: #ece8f6;
+    --db-ink-muted: #8f8aa3;
+
+    --db-neon-volt: #b97bff;
+    --db-neon-hot: #ff5bab;
+    --db-neon-ok: #3ef0a1;
+    --db-neon-warn: #ffb341;
+    --db-neon-bad: #ff4d63;
+    --db-neon-info: #4cc9ff;
+    --db-neon-idle: #6b6880;
+
+    --db-cat-electronics: #4cc9ff;
+    --db-cat-home: #ff9a52;
+    --db-cat-fashion: #ff5bab;
+    --db-cat-toys: #3ef0a1;
+    --db-cat-beauty: #c99bff;
+    --db-cat-grocery: #c6f24e;
+
+    --db-glow: 1;
+    --db-pool: 0.42;
+    --db-reflect: 0.6;
+    --db-focus: rgb(255 255 255 / 0.22);
+  }
+}
+
+:root[data-theme='dark'] {
+  --db-sky-top: #06050c;
+  --db-sky-mid: #0f0a1f;
+  --db-sky-low: #241038;
+  --db-fan: rgb(150 120 255 / 0.05);
+  --db-fan-line: rgb(190 170 255 / 0.12);
+  --db-iron: #2b2740;
+  --db-iron-2: #3a3554;
+  --db-facade: #15131f;
+  --db-facade-2: #1b1828;
+  --db-facade-line: rgb(255 255 255 / 0.04);
+  --db-fascia: #0d0c15;
+  --db-fascia-2: #0a0910;
+  --db-frame: #27233a;
+  --db-glass-dark: #0c0b14;
+  --db-glass-deep: #07060c;
+  --db-sill: #100e19;
+  --db-sill-ink: #e9e4f6;
+  --db-sill-muted: #8b84a3;
+  --db-floor: #12101b;
+  --db-floor-2: #0e0c16;
+  --db-street: #0c0b13;
+  --db-street-2: #08070e;
+  --db-rail: #2b2740;
+  --db-shopper: #04030a;
+  --db-shopper-2: #0b0914;
+  --db-paper: #6f5a3d;
+  --db-paper-2: #5e4b31;
+  --db-paper-ink: #f2e6cf;
+  --db-tape: rgb(240 230 210 / 0.35);
+  --db-shutter: #34313f;
+  --db-shutter-2: #2a2834;
+  --db-shutter-line: rgb(0 0 0 / 0.45);
+  --db-whitewash: rgb(220 215 230 / 0.32);
+  --db-rope: #c21b4c;
+  --db-brass: #d8b257;
+  --db-clock: rgb(14 12 24 / 0.82);
+  --db-clock-line: rgb(255 255 255 / 0.1);
+  --db-clock-ink: #ece8f6;
+  --db-clock-muted: #8f8aa3;
+  --db-snow: rgb(235 230 255 / 0.7);
+  --db-ink: #ece8f6;
+  --db-ink-muted: #8f8aa3;
+
+  --db-neon-volt: #b97bff;
+  --db-neon-hot: #ff5bab;
+  --db-neon-ok: #3ef0a1;
+  --db-neon-warn: #ffb341;
+  --db-neon-bad: #ff4d63;
+  --db-neon-info: #4cc9ff;
+  --db-neon-idle: #6b6880;
+
+  --db-cat-electronics: #4cc9ff;
+  --db-cat-home: #ff9a52;
+  --db-cat-fashion: #ff5bab;
+  --db-cat-toys: #3ef0a1;
+  --db-cat-beauty: #c99bff;
+  --db-cat-grocery: #c6f24e;
+
+  --db-glow: 1;
+  --db-pool: 0.42;
+  --db-reflect: 0.6;
+  --db-focus: rgb(255 255 255 / 0.22);
+}
+
+.db-sky {
+  background:
+    radial-gradient(120% 60% at 50% 100%, color-mix(in oklab, var(--db-neon-volt) 16%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--db-sky-top) 0%, var(--db-sky-mid) 45%, var(--db-sky-low) 100%);
+}
+
+/* ------------------------------------------------------------------ motion that explains state */
+
+/* A sold-out sign strikes once, like a neon tube catching, then holds. */
+@keyframes db-flicker {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  12% { opacity: 0.1; }
+  20% { opacity: 0.95; }
+  24% { opacity: 0.25; }
+  34% { opacity: 1; }
+  40% { opacity: 0.55; }
+  48%, 100% { opacity: 1; }
+}
+.db-flicker { animation: db-flicker 1.2s steps(1, end) 1 both; }
+
+/* The amber shutter beacon on a deal that will sell out before it ends. */
+@keyframes db-blink {
+  0%, 55% { opacity: 1; }
+  70%, 90% { opacity: 0.18; }
+  100% { opacity: 1; }
+}
+.db-blink { animation: db-blink 1.6s ease-in-out infinite; }
+
+/* Window light follows the data: brighter as stock sells. */
+.db-light { transition: opacity 600ms cubic-bezier(0.2, 0, 0, 1), fill 300ms ease; }
+.db-replaying .db-light { transition-duration: 120ms; }
+.db-dim { transition: opacity 200ms cubic-bezier(0.2, 0, 0, 1); }
+
+/* Shoppers step into the queue. */
+@keyframes db-step-in {
+  from { opacity: 0; transform: translateX(6px); }
+  to { opacity: 1; transform: none; }
+}
+.db-shopper { animation: db-step-in 360ms cubic-bezier(0.2, 0, 0, 1) both; transform-box: fill-box; }
+
+/* The one seasonal flourish: a little snow in front of the arcade. Capped, paused when hidden, off for reduced motion. */
+@keyframes db-snow {
+  from { transform: translate3d(0, -40px, 0); }
+  to { transform: translate3d(var(--drift, 12px), 820px, 0); }
+}
+.db-flake { animation: db-snow var(--dur, 14s) linear infinite; animation-delay: var(--delay, 0s); }
+.db-paused .db-flake,
+.db-paused .db-blink { animation-play-state: paused; }
+
+.db-window { cursor: pointer; outline: none; }
+.db-window:focus-visible .db-focus-ring { opacity: 1; }
+.db-focus-ring { opacity: 0; transition: opacity 120ms ease; }
+
+.db-clock-hit { cursor: ew-resize; touch-action: none; outline: none; }
+.db-clock-hit:focus-visible .db-clock-knob { stroke: var(--db-neon-white); stroke-width: 3; }
+
+@media (prefers-reduced-motion: reduce) {
+  .db-flicker,
+  .db-blink,
+  .db-shopper,
+  .db-flake { animation: none !important; }
+  .db-light,
+  .db-dim { transition: none !important; }
+}
+
+/* ------------------------------------------------------------------ app chrome bits */
+
+.db-neon-text {
+  text-shadow: 0 0 calc(10px * var(--db-glow)) color-mix(in oklab, currentColor 60%, transparent);
+}
